@@ -1,0 +1,24 @@
+<h1 class="mt-4"> Serviço Prestado</h1>
+<ol class=""bradcrumb mb-4">
+</ol>
+<div class = "container">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>
+                        Cliente:
+                    </label>
+                    <select class="form-control"> 
+                        <option value="">
+                            Selecione...
+                        </option>
+                        <option *ngFor="let cliente of clientes" [ngValue]="cliente.id" >
+                            
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
