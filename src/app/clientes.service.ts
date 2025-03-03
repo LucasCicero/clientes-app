@@ -14,19 +14,20 @@ export class ClientesService {
   constructor(private http: HttpClient) {}
 
    salvar(cliente:Cliente) : Observable<Cliente>{// modulo que transforma sua aplicação js em reativa(reage quando tiver uma resposta do servidor)
-      return this.http.post<Cliente>(`${this.apiURL}`,cliente)
+   
+      return this.http.post<Cliente>(`${this.apiURL}`,cliente);
    } 
 
    atualizar(cliente:Cliente) : Observable<any>{//any pq no backend retorna void
-    return this.http.put<Cliente>(`${this.apiURL}/${cliente.id}`, cliente)
+    return this.http.put<Cliente>(`${this.apiURL}/${cliente.id}`, cliente);
  } 
 
  deletar(cliente:Cliente) : Observable<any>{
-  return this.http.delete<any>(`${this.apiURL}/${cliente.id}`)
+  return this.http.delete<any>(`${this.apiURL}/${cliente.id}`);
 } 
 
     getClientes() : Observable<Cliente[]>{
-      return this.http.get<Cliente[]>(`${this.apiURL}`);
+      return this.http.get<Cliente[]>(this.apiURL);
     }
 
     getClientebyId(id: number) : Observable<Cliente> {
